@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Patients Create</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3>Update:</h3>
+
+<div>
+  <form action="#" th:action="@{/patients/update}" th:object="${patient}" method="post">
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID"><br>
+    <input type="text" name="lastName" placeholder="Фамилия" class="form-control"><br>
+    <input type="text" name="firstName" placeholder="Имя" class="form-control"><br>
+    <input type="text" name="middleName" placeholder="Отчество" class="form-control"><br>
+    <input type="text" name="dateOfArrival" placeholder="Дата прибытия" class="form-control"><br>
+    <input type="text" name ="dateOfBirth"placeholder="Дата рождения" class="form-control"><br>
+    <input type="text" name="sex" placeholder="Пол" class="form-control"><br>
+    <input type="text" name="chamber" placeholder="Камера id" class="form-control"><br>
+    <input type="text" name="personal" placeholder="Персонал id" class="form-control"><br>
+    <input type="text" name="mentalIllness" placeholder="Психическое расстройство id" class="form-control"><br>
+    <button type="submit">Create Patient</button>
+  </form>
+</div>
+</body>
+</html>

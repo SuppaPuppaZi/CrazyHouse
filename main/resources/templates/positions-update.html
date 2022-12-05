@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Update Position</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3>Update:</h3>
+<form action="#" th:action="@{/positions/update}" th:object="${position}" method="post">
+ <input readonly type="number" th:field="*{id}" id="id" placeholder="ID"><br>
+  <input type="text" th:field="*{positionType}" id="position" placeholder="Position" class="form-control"><br>
+  <input type="number" th:field="*{salary}" id="salary" placeholder="Salary" class="form-control"><br>
+  <input type="submit" value="Create Position">
+</form>
+</body>
+</html>

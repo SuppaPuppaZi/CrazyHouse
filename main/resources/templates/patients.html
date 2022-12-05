@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Patients</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3>Patients:</h3>
+<a href="/patients/create">Add</a>
+
+<table class="table table-striped">
+  <tbody>
+  <tr>
+    <th>ID</th>
+    <th>Last Name</th>
+    <th>First Name</th>
+    <th>Middle Name</th>
+    <th>Date of Arrival</th>
+    <th>Date of Birth</th>
+    <th>Sex</th>
+    <th>Chamber Number</th>
+    <th>Personal ID</th>
+    <th>Mental Illness Name</th>
+    <th></th>
+  </tr>
+
+  <tr>
+    <td>
+      <div th:each="patient : ${patients}">
+        <span th:text="${patient.id}"></span>
+      </div>
+
+    </td>
+
+    <td><div th:each="patient : ${patients}">
+      <span th:text="${patient.firstName}"></span>
+    </div></td>
+
+    <td><div th:each="patient : ${patients}">
+      <span th:text="${patient.lastName}"></span>
+    </div></td>
+
+    <td><div th:each="patient : ${patients}">
+      <span th:text="${patient.middleName}"></span>
+    </div></td>
+
+    <td><div th:each="patient : ${patients}">
+      <span th:text="${patient.dateOfArrival}"></span>
+    </div></td>
+
+    <td><div th:each="patient : ${patients}">
+      <span th:text="${patient.dateOfBirth}"></span>
+    </div></td>
+
+    <td><div th:each="patient : ${patients}">
+      <span th:text="${patient.sex}"></span>
+    </div></td>
+
+  <td><div th:each="patient : ${patients}">
+    <span th:text="${patient.chamber.chamberNumber}"></span>
+  </div></td>
+
+  <td><div th:each="patient : ${patients}">
+    <span th:text="${patient.personal.id}"></span>
+  </div></td>
+
+  <td><div th:each="patient : ${patients}">
+    <span th:text="${patient.mentalIllness.mentalIllnessName}"></span>
+  </div></td>
+
+    <td>
+      <div th:each="patient : ${patients}">
+        <a th:href="@{patients/update/{id}(id=${patient.id})}">Edit</a>
+        <a th:href="@{patients/delete/{id}(id=${patient.id})}">Delete</a>
+      </div>
+    </td>
+
+
+  </tr>
+
+
+  </tbody>
+</table>
+
+</body>
+</html>

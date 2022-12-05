@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Cabinets</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3>Cabinets:</h3>
+
+<a href="/cabinets/create">Add</a>
+<table class="table table-striped">
+    <tbody>
+    <tr>
+        <th>ID</th>
+        <th>Cabinet Number</th>
+        <th></th>
+    </tr>
+
+
+    <tr>
+        <td>
+            <div th:each="cabinet : ${cabinets}">
+                <span th:text="${cabinet.id}"></span>
+            </div>
+
+        </td>
+
+        <td><div th:each="cabinet : ${cabinets}">
+            <span th:text="${cabinet.cabinetNumber}"></span>
+        </div></td>
+
+        <td>
+            <div th:each="cabinet : ${cabinets}">
+                <a th:href="@{cabinets/update/{id}(id=${cabinet.id})}">Edit</a>
+                <a th:href="@{cabinets/delete/{id}(id=${cabinet.id})}">Delete</a>
+            </div>
+
+        </td>
+
+    </tr>
+
+    </tbody>
+</table>
+
+
+
+</body>
+</html>

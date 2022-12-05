@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Chamber Create</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3>Add:</h3>
+
+<div>
+    <form action="#" th:action="@{/chambers/create}" th:object="${chamber}" method="post">
+        <input type="text" th:field="*{chamberNumber}" id="chamberNumber" placeholder="chamber number" class="form-control"><br>
+        <input type="submit" value="Create Chamber">
+    </form>
+</div>
+</body>
+</html>

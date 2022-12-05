@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Positions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3>Positions:</h3>
+
+<a href="/positions/create">Add</a>
+<table class="table table-striped">
+    <tbody>
+    <tr>
+        <th>ID</th>
+        <th>Position</th>
+        <th>Salary</th>
+        <th></th>
+    </tr>
+
+
+    <tr>
+        <td>
+            <div th:each="position : ${positions}">
+                <span th:text="${position.id}"></span>
+            </div>
+
+        </td>
+
+        <td><div th:each="position : ${positions}">
+            <span th:text="${position.positionType}"></span>
+        </div></td>
+
+        <td><div th:each="position : ${positions}">
+            <span th:text="${position.salary}"></span>
+        </div></td>
+
+        <td>
+            <div th:each="position : ${positions}">
+                <a th:href="@{positions/update/{id}(id=${position.id})}">Edit</a>
+                <a th:href="@{positions/delete/{id}(id=${position.id})}">Delete</a>
+            </div>
+
+        </td>
+
+    </tr>
+
+    </tbody>
+</table>
+
+
+
+</body>
+</html>

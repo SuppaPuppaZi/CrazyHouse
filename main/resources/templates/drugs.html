@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Drugs</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3>Drugs:</h3>
+
+<a href="/drugs/create">Add</a>
+<table class="table table-striped">
+    <tbody>
+    <tr>
+        <th>ID</th>
+        <th>Drug</th>
+        <th>Description</th>
+        <th></th>
+    </tr>
+
+
+    <tr>
+        <td>
+            <div th:each="drug : ${drugs}">
+                <span th:text="${drug.id}"></span>
+            </div>
+
+        </td>
+
+        <td><div th:each="drug : ${drugs}">
+            <span th:text="${drug.drugName}"></span>
+        </div></td>
+
+        <td><div th:each="drug : ${drugs}">
+            <span th:text="${drug.description}"></span>
+        </div></td>
+
+        <td>
+            <div th:each="drug : ${drugs}">
+                <a th:href="@{drugs/update/{id}(id=${drug.id})}">Edit</a>
+                <a th:href="@{drugs/delete/{id}(id=${drug.id})}">Delete</a>
+            </div>
+
+        </td>
+
+    </tr>
+
+    </tbody>
+</table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Drug</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3>Add:</h3>
+<form action="#" th:action="@{/drugs/create}" th:object="${drug}" method="post">
+    <input type="text" th:field="*{drugName}" id="drug" placeholder="Drug (title)" class="form-control"><br>
+    <textarea th:field="*{description}" id="description" placeholder="Description" class="form-control"></textarea><br>
+    <input type="submit" value="Create Drug">
+</form>
+</body>
+</html>

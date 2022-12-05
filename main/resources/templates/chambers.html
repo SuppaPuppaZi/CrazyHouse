@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Chambers</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3>Chambers:</h3>
+<a href="/chambers/create">Add</a>
+
+
+
+<table class="table table-striped">
+    <tbody>
+    <tr>
+        <th>ID</th>
+        <th>Chamber Number</th>
+        <th></th>
+    </tr>
+
+    <tr>
+        <td>
+            <div th:each="chamber : ${chambers}">
+                <span th:text="${chamber.id}"></span>
+            </div>
+
+        </td>
+
+        <td><div th:each="chamber : ${chambers}">
+            <span th:text="${chamber.chamberNumber}"></span>
+        </div></td>
+        <td>
+            <div th:each="chamber : ${chambers}">
+                <a th:href="@{chambers/update/{id}(id=${chamber.id})}">Edit</a>
+                <a th:href="@{chambers/delete/{id}(id=${chamber.id})}">Delete</a>
+            </div>
+        </td>
+    </tr>
+
+
+
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Update Cabinet</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<h3>Update:</h3>
+<body>
+    <form action="#" th:action="@{/chambers/update}" th:object="${cabinet}" method="post">
+        <input readonly type="number" th:field="*{id}" id="id" placeholder="ID"><br>
+        <input type="text" th:field="*{cabinetNumber}" id="cabinetNumber" placeholder="cabinet number" class="form-control"><br>
+        <input type="submit" value="Update Cabinet">
+    </form>
+</body>
+</html>
